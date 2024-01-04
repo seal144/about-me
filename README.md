@@ -1,3 +1,9 @@
+## About me
+
+This project is a résumé page on my professional skills. For now, it is in the development phase.
+
+### Used: Next.js, TypeScript, Tailwind.css.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
