@@ -20,6 +20,14 @@ const config: Config = {
       xl: '1280px',
       '2xl': '1536px',
     },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '4rem',
+        lg: '8rem',
+      },
+    },
   },
   plugins: [],
 };
