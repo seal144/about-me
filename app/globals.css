@@ -3,18 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: 60, 100, 140;
+  --color-primary: 110, 180, 170;
+  --color-secondary: 160, 140, 50;
+  --color-background: 60, 65, 75;
+  --color-foreground: 255, 255, 255;
+  /* --color-primary: 60, 100, 140;
   --color-secondary: 150, 100, 50;
   --color-background: 255, 255, 255;
-  --color-foreground: 0, 0, 0;
+  --color-foreground: 0, 0, 0; */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-primary: 60, 100, 140;
-    --color-secondary: 150, 100, 50;
-    --color-background: 255, 255, 255;
-    --color-foreground: 0, 0, 0;
+    --color-primary: 110, 180, 170;
+    --color-secondary: 160, 140, 50;
+    --color-background: 60, 65, 75;
+    --color-foreground: 255, 255, 255;
   }
 }
 

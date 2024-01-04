@@ -13,6 +13,13 @@ const config: Config = {
       background: 'rgb(var(--color-background))',
       foreground: 'rgb(var(--color-foreground))',
     },
+    screens: {
+      sm: '480px',
+      md: '600px',
+      lg: '960px',
+      xl: '1280px',
+      '2xl': '1536px',
+    },
   },
   plugins: [],
 };
