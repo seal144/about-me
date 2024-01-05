@@ -28,6 +28,10 @@ const config: Config = {
         lg: '8rem',
       },
     },
+    dropShadow: {
+      s: '3px 3px 3px rgba(0, 0, 0, .3)',
+      l: '5px 5px 5px rgba(0, 0, 0, .3)',
+    },
   },
   plugins: [],
 };
