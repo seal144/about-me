@@ -28,9 +28,17 @@ const config: Config = {
         lg: '8rem',
       },
     },
-    dropShadow: {
-      s: '3px 3px 3px rgba(0, 0, 0, .3)',
-      l: '5px 5px 5px rgba(0, 0, 0, .3)',
+    extend: {
+      dropShadow: {
+        s: '3px 3px 4px rgba(0, 0, 0, .25)',
+        l: '5px 5px 6px rgba(0, 0, 0, .25)',
+      },
+      borderWidth: {
+        DEFAULT: '3px',
+      },
+      spacing: {
+        section: '40px',
+      },
     },
   },
   plugins: [],
