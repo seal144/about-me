@@ -1,5 +1,14 @@
 import type { Config } from 'tailwindcss';
 
+const colors = {
+  primary: 'rgb(var(--color-primary))',
+  secondary: 'rgb(var(--color-secondary))',
+  background: 'rgb(var(--color-background))',
+  foreground: 'rgb(var(--color-foreground))',
+};
+
+export type Colors = keyof typeof colors;
+
 const config: Config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -7,12 +16,7 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    colors: {
-      primary: 'rgb(var(--color-primary))',
-      secondary: 'rgb(var(--color-secondary))',
-      background: 'rgb(var(--color-background))',
-      foreground: 'rgb(var(--color-foreground))',
-    },
+    colors,
     screens: {
       sm: '480px',
       md: '600px',
@@ -35,6 +39,7 @@ const config: Config = {
       },
       borderWidth: {
         DEFAULT: '3px',
+        sm: '2px',
       },
       spacing: {
         section: '40px',

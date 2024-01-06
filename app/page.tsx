@@ -2,6 +2,7 @@ import BackgroundAnimation from '@/app/ui/home/background-animation';
 import HeroSection from '@/app/ui/home/hero-section';
 import Navigation from '@/app/ui/navigation';
 import Section from '@/app/ui/section';
+import Footer from '@/app/ui/footer';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Section title="Experience" subtitle="Commercial projects examples I have been involved in:">
         <p className="text-foreground text-xl h-[300px] mt-12">content</p>
       </Section>
+      <Footer />
     </main>
   );
 }

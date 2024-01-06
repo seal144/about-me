@@ -14,7 +14,7 @@ const Header = ({ reversed = false, title, subtitle }: { reversed?: boolean; tit
         *{title}
       </h2>
       <h3
-        className={clsx('text-xl mt-3 drop-shadow-s', {
+        className={clsx('text-xl mt-3 drop-shadow-s text-center', {
           'text-secondary': !reversed,
           'text-foreground': reversed,
         })}
