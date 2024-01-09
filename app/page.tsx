@@ -2,6 +2,7 @@ import BackgroundAnimation from '@/app/ui/home/background-animation';
 import HeroSection from '@/app/ui/home/hero-section';
 import Navigation from '@/app/ui/navigation';
 import Section from '@/app/ui/section';
+import SkillsSection from '@/app/ui/home/skillsSection';
 import Footer from '@/app/ui/footer';
 
 export default function Home() {
@@ -11,13 +12,11 @@ export default function Home() {
       <HeroSection />
       <Navigation className="mb-section" />
       <Section title="About me">
-        <p className="text-foreground text-xl h-[300px] mt-12">content</p>
+        <p className="text-foreground text-xl h-[300px]">content</p>
       </Section>
-      <Section title="Skills" backgroundPrimary>
-        <p className="text-foreground text-xl h-[300px] mt-12">content</p>
-      </Section>
+      <SkillsSection />
       <Section title="Experience" subtitle="Commercial projects examples I have been involved in:">
-        <p className="text-foreground text-xl h-[300px] mt-12">content</p>
+        <p className="text-foreground text-xl h-[300px]">content</p>
       </Section>
       <Footer />
     </main>
