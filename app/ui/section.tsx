@@ -19,7 +19,7 @@ const Section = ({
         'bg-primary': backgroundPrimary,
       })}
     >
-      <div className="container flex flex-col items-center">
+      <div className="container flex flex-col items-center gap-5">
         {title && <Header reversed={backgroundPrimary} title={title} subtitle={subtitle} />}
         {children}
       </div>
