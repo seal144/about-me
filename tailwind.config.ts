@@ -34,8 +34,8 @@ const config: Config = {
     },
     extend: {
       dropShadow: {
-        s: '3px 3px 4px rgba(0, 0, 0, .25)',
-        l: '5px 5px 6px rgba(0, 0, 0, .25)',
+        s: '0 3px 4px rgba(0, 0, 0, .25)',
+        l: '0 5px 6px rgba(0, 0, 0, .25)',
       },
       borderWidth: {
         DEFAULT: '3px',
