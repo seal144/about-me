@@ -3,16 +3,12 @@ import Section from '@/app/ui/section';
 import { fetchSkills } from '@/app/lib/data';
 import Chip from '@/app/ui/chip';
 import { randomNumber } from '@/app/utils/math';
+import ErrorBoundary from '@/app/ui/errorBoundary';
+import SkillsErrorFallback from './skillsErrorFallback';
 
-const SkillsWrapper = async () => {
+const Skills = async () => {
   const data = await fetchSkills();
-  return (
-    <>
-      {data.map((skill) => (
-        <Chip key={skill.id} label={skill.name} onPrimary />
-      ))}
-    </>
-  );
+  return <>{data && data.map((skill) => <Chip key={skill.id} label={skill.name} onPrimary />)}</>;
 };
 
 const SkillsSkeleton = () => {
@@ -45,9 +41,11 @@ const SkillsSection = () => {
   return (
     <Section title="Skills" backgroundPrimary>
       <div className="flex gap-2 flex-wrap justify-center sm:gap-4">
-        <Suspense fallback={<SkillsSkeleton />}>
-          <SkillsWrapper />
-        </Suspense>
+        <ErrorBoundary fallback={<SkillsErrorFallback />}>
+          <Suspense fallback={<SkillsSkeleton />}>
+            <Skills />
+          </Suspense>
+        </ErrorBoundary>
       </div>
     </Section>
   );
