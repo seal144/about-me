@@ -9,6 +9,14 @@ const colors = {
 
 export type Colors = keyof typeof colors;
 
+// NOTE: below values are related to padding classes in aboutMeSection.tsx. If you want to change it you you need to also manually change padding classes in aboutMeSection.tsx to align with the app container. I tried to use the template string (``) in aboutMeSection.tsx and calculate the values automatically, but it is not always working.
+const containerPadding = {
+  DEFAULT: '1rem',
+  sm: '2rem',
+  lg: '4rem',
+  xl: '8rem',
+};
+
 const config: Config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -26,11 +34,7 @@ const config: Config = {
     },
     container: {
       center: true,
-      padding: {
-        DEFAULT: '1rem',
-        sm: '4rem',
-        lg: '8rem',
-      },
+      padding: containerPadding,
     },
     extend: {
       dropShadow: {
