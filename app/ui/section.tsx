@@ -2,6 +2,8 @@ import { ReactElement } from 'react';
 import clsx from 'clsx';
 import Header from './header';
 
+export const sectionCommonClasses = 'mb-section';
+
 const Section = ({
   backgroundPrimary = false,
   children,
@@ -15,7 +17,7 @@ const Section = ({
 }) => {
   return (
     <section
-      className={clsx('bg-background py-8 mb-section border-y', {
+      className={clsx(sectionCommonClasses, 'bg-background  py-8 border-y', {
         'bg-primary': backgroundPrimary,
       })}
     >
