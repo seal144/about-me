@@ -8,10 +8,14 @@ const Footer = () => {
         <div className="text-secondary lg:flex">
           <p className="drop-shadow-s lg:flex-1">rafalfak8@gmail.com</p>
           <div className="lg:flex-1 lg:text-center lg:border-x-sm">
-            <ExternalLink label="LinkedIn" href="https://www.linkedin.com/in/rafal-fak/" iconColor="secondary" />
+            <ExternalLink
+              label="LinkedIn(rafal-fak)"
+              href="https://www.linkedin.com/in/rafal-fak/"
+              iconColor="secondary"
+            />
           </div>
           <div className="lg:flex-1 lg:text-right">
-            <ExternalLink label="Github" href="https://github.com/seal144/" iconColor="secondary" />
+            <ExternalLink label="Github(seal144)" href="https://github.com/seal144/" iconColor="secondary" />
           </div>
         </div>
       </div>
