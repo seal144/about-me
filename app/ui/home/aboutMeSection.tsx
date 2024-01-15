@@ -1,8 +1,9 @@
 import clsx from 'clsx';
+import Image from 'next/image';
 import { sectionMb, sectionPy } from '@/app/ui/section';
 import Header from '@/app/ui/header';
-import ExternalLink from '../externalLink';
-import Image from 'next/image';
+import ExternalLink from '@/app/ui/externalLink';
+import Paragraph from '@/app/ui/paragraph';
 
 // NOTE: the padding classes are related to containerPadding in tailwind.config.ts, if the containerPadding changes, you need to also manually change the below values to align with the app container. I tried to use the template string (``) and calculate the padding values to change automatically when containerPadding changes, but it is not always working.
 const containerPadding = 'px-0 sm:px-[1rem]';
@@ -83,30 +84,30 @@ const AboutMeSection = () => {
         >
           <Header className="hidden md:block" title="About me" />
           <SubSection title="Who I am" noMarginTopOnSmallScreen>
-            <p className="text-foreground mb-2 text-left lg:text-justify">
-              *Hello, I am a dedicated front-end developer with a track record in web application development. My
-              passion for the craft is evident in my extensive knowledge of JavaScript and related technologies, with a
-              primary focus on front-end frameworks like React.js and Vue.js.
-            </p>
-            <p className="text-foreground mb-2 text-left lg:text-justify">
-              *I thrive on the challenge of finding innovative solutions that enhance user experiences for websites and
+            <Paragraph>
+              Hello, I am a dedicated front-end developer with a track record in web application development. My passion
+              for the craft is evident in my extensive knowledge of JavaScript and related technologies, with a primary
+              focus on front-end frameworks like React.js and Vue.js.
+            </Paragraph>
+            <Paragraph>
+              I thrive on the challenge of finding innovative solutions that enhance user experiences for websites and
               applications. As a team player, I like to collaborate and I know the importance of good communication.
-            </p>
-            <p className="text-foreground mb-2 text-left lg:text-justify">
-              *I believe in the transformative power of technology to make a positive impact on the world.
-            </p>
+            </Paragraph>
+            <Paragraph>
+              I believe in the transformative power of technology to make a positive impact on the world.
+            </Paragraph>
           </SubSection>
           <SubSection title="My background">
-            <p className="text-foreground mb-2 text-left lg:text-justify">
-              *My programming journey started from a deep fascination with information technology. As a self-taught
+            <Paragraph>
+              My programming journey started from a deep fascination with information technology. As a self-taught
               professional, I&apos;ve developed an ability for independent learning and continuous self-improvement.
-            </p>
-            <p className="text-foreground mb-2 text-left lg:text-justify">
-              *Before my foray into the IT field, I earned a master of engineering degree in architectural studies and
+            </Paragraph>
+            <Paragraph>
+              Before my foray into the IT field, I earned a master of engineering degree in architectural studies and
               spent several years practicing as an architect. My experience in architecture has instilled in me an
               engineering approach to problem-solving, a sense of aesthetics, and an appreciation for good design. This
               background enabled me to approach programming with a unique blend of creativity and analytical thinking.
-            </p>
+            </Paragraph>
           </SubSection>
         </div>
         <div className={clsx(sectionPy, 'bg-primary text-background md:w-5/12 xl:w-4/12')}>
