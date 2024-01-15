@@ -1,15 +1,19 @@
 import clsx from 'clsx';
 import type { Colors } from '@/tailwind.config';
 
-const ArrowRightIcon = ({ fill = 'primary' }: { fill?: Colors }) => {
+const ArrowRightIcon = ({ fill = 'primary', className }: { fill?: Colors; className?: string }) => {
   return (
     <svg
-      className={clsx('inline', {
-        'fill-primary': fill === 'primary',
-        'fill-secondary': fill === 'secondary',
-        'fill-background': fill === 'background',
-        'fill-foreground': fill === 'foreground',
-      })}
+      className={clsx(
+        'inline',
+        {
+          'fill-primary': fill === 'primary',
+          'fill-secondary': fill === 'secondary',
+          'fill-background': fill === 'background',
+          'fill-foreground': fill === 'foreground',
+        },
+        className
+      )}
       height="20"
       viewBox="0 -960 960 960"
       width="20"

@@ -13,9 +13,6 @@ export default function Home() {
       <HeroSection />
       <Navigation className="mb-section" />
       <AboutMeSection />
-      <Section title="About me">
-        <p className="text-foreground text-xl h-[300px]">content</p>
-      </Section>
       <SkillsSection />
       <Section title="Experience" subtitle="Commercial projects examples I have been involved in:">
         <p className="text-foreground text-xl h-[300px]">content</p>

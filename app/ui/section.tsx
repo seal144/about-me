@@ -2,7 +2,8 @@ import { ReactElement } from 'react';
 import clsx from 'clsx';
 import Header from './header';
 
-export const sectionCommonClasses = 'mb-section';
+export const sectionMb = 'mb-section';
+export const sectionPy = 'py-8';
 
 const Section = ({
   backgroundPrimary = false,
@@ -17,12 +18,12 @@ const Section = ({
 }) => {
   return (
     <section
-      className={clsx(sectionCommonClasses, 'bg-background  py-8 border-y', {
+      className={clsx(sectionMb, sectionPy, 'bg-background border-y', {
         'bg-primary': backgroundPrimary,
       })}
     >
       <div className="container flex flex-col items-center gap-5">
-        {title && <Header reversed={backgroundPrimary} title={title} subtitle={subtitle} />}
+        {title && <Header onPrimary={backgroundPrimary} title={title} subtitle={subtitle} />}
         {children}
       </div>
     </section>
