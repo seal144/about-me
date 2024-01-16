@@ -43,7 +43,7 @@ const SubSection = ({
       >
         {title && (
           <h3
-            className={clsx('text-3xl mb-3', {
+            className={clsx('text-2xl mb-3 lg:text-3xl', {
               'text-primary': !onPrimary,
               'text-background': onPrimary,
             })}
