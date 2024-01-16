@@ -1,9 +1,9 @@
 import BackgroundAnimation from '@/app/ui/home/background-animation';
 import HeroSection from '@/app/ui/home/hero-section';
 import Navigation from '@/app/ui/navigation';
-import Section from '@/app/ui/section';
 import AboutMeSection from '@/app/ui/home/aboutMeSection';
 import SkillsSection from '@/app/ui/home/skillsSection';
+import ExperienceSection from '@/app/ui/home/experienceSection';
 import Footer from '@/app/ui/footer';
 
 export default function Home() {
@@ -14,9 +14,7 @@ export default function Home() {
       <Navigation className="mb-section" />
       <AboutMeSection />
       <SkillsSection />
-      <Section title="Experience" subtitle="Commercial projects examples I have been involved in:">
-        <p className="text-foreground text-xl h-[300px]">content</p>
-      </Section>
+      <ExperienceSection />
       <Footer />
     </main>
   );

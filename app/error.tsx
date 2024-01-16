@@ -10,7 +10,7 @@ export default function Error() {
             It appears that there is some problem with rendering the page due to some error. Sorry for the
             inconvenience. Please, try again later.
           </p>
-          <p>You can let me know. I would appreciate it.</p>
+          <p>You can let me know, I would appreciate it.</p>
         </div>
       </div>
     </section>
