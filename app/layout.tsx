@@ -3,8 +3,8 @@ import { robotoMono } from '@/app/ui/fonts';
 import '@/app/globals.css';
 
 export const metadata: Metadata = {
-  title: 'Rafał Fąk | Frontend Developer',
-  description: 'Rafał Fąk - Frontend Developer. About me page',
+  title: 'Rafał Fąk | JavaScript Developer',
+  description: 'Rafał Fąk - JavaScript Developer. About me page',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

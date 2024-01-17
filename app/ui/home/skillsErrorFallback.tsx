@@ -77,8 +77,8 @@ const mockedData = [
     name: 'Scrum',
   },
 ];
-// This component is used as a fallback for ErrorBoundry in skillsSection. It is showing mocked data that normally are fetched from DB, it could be also an Error message, but I rather show some mocked data instead of an error. Maybe you want to ask: "But why do you have to fetch this data in the first place?" and my answer would be: "Good question you are right I don't have to do so, but it is my first project in Next.js and I want to practice features that Next has to offer"
-const skillsErrorFallback = async () => {
+// This component is used as a fallback for ErrorBoundry. It is showing mocked data that normally are fetched from DB, it could be also an Error message, but I rather show some mocked data instead of an error. Maybe you want to ask: "But why do you have to fetch this data in the first place?" and my answer would be: "Good question you are right I don't have to do so, but it is my first project in Next.js and I want to practice features that Next has to offer"
+const SkillsErrorFallback = async () => {
   return (
     <>
       {mockedData.map((skill, index) => (
@@ -88,4 +88,4 @@ const skillsErrorFallback = async () => {
   );
 };
 
-export default skillsErrorFallback;
+export default SkillsErrorFallback;

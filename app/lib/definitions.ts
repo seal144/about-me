@@ -4,3 +4,11 @@ export type Skill = {
   list_order: number;
   skill: string | null;
 };
+
+export type Project = {
+  id: string;
+  name: string;
+  description: string;
+  myRole: string;
+  technologies: string[];
+};
