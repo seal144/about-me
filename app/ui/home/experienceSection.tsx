@@ -1,5 +1,6 @@
 import Section from '@/app/ui/section';
 import Paragraph from '@/app/ui/paragraph';
+import Chip from '../chip';
 
 const mockedProjects = [
   {
@@ -30,10 +31,10 @@ const mockedProjects = [
 
 const ProjectProp = ({ title, children }: { title: string; children: React.ReactNode }) => {
   return (
-    <>
-      <h4 className="text-background text-base sm:text-lg">{title}</h4>
+    <div className="mb-3">
+      <h4 className="text-background text-base sm:text-lg mb-1">{title}</h4>
       {children}
-    </>
+    </div>
   );
 };
 
@@ -53,7 +54,11 @@ const ProjectCards = () => {
               <Paragraph>{project.myRole}</Paragraph>
             </ProjectProp>
             <ProjectProp title="Technologies">
-              <span className="text-foreground">*{project.technologies.join(', *')}</span>
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech, index) => (
+                  <Chip key={index} label={tech} onPrimary small />
+                ))}
+              </div>
             </ProjectProp>
           </div>
         ))}
@@ -63,7 +68,7 @@ const ProjectCards = () => {
 
 const ExperienceSection = () => {
   return (
-    <Section title="Experience" subtitle="Commercial projects examples I have been involved in:">
+    <Section title="Experience" subtitle="Some commercial projects I have been involved in:">
       <div className="flex flex-wrap justify-center gap-8 xl:gap-10 2xl:gap-12">
         <ProjectCards />
       </div>
