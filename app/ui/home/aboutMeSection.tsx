@@ -85,8 +85,8 @@ const AboutMeSection = () => {
           <Header className="hidden md:block" title="About me" />
           <SubSection title="Who I am" noMarginTopOnSmallScreen>
             <Paragraph>
-              Hello, I am a dedicated front-end developer with a track record in web application development. My passion
-              for the craft is evident in my extensive knowledge of JavaScript and related technologies, with a primary
+              I am a dedicated front-end developer with a track record in web application development. My passion for
+              the craft is evident in my extensive knowledge of JavaScript and related technologies, with a primary
               focus on front-end frameworks like React.js and Vue.js.
             </Paragraph>
             <Paragraph>

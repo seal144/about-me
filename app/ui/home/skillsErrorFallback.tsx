@@ -41,7 +41,7 @@ const mockedData = [
     name: 'Styled-Components',
   },
   {
-    name: 'Material-UI',
+    name: 'Material UI',
   },
   {
     name: 'Tailwind CSS',

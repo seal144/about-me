@@ -25,7 +25,7 @@ const ProjectCards = ({ data }: { data: Project[] }) => {
           <ProjectProp title="My role">
             <Paragraph>{project.myRole}</Paragraph>
           </ProjectProp>
-          <ProjectProp title="Technologies">
+          <ProjectProp title="Core technologies">
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech, index) => (
                 <Chip key={index} label={tech} onPrimary small />
