@@ -7,7 +7,7 @@ const mockedProjects = [
     id: 1,
     name: 'E-learning web\xa0app',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, nisi labore mollitia quisquam accusamus sunt magni adipisci, ipsum exercitationem eius culpa suscipit. Dolores provident aut natus iste harum? Quam, inventore? Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, nisi labore mollitia quisquam accusamus sunt magni adipisci, ipsum exercitationem eius culpa suscipit. Dolores provident aut natus iste harum? Quam, inventore?',
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, nisi labore mollitia quisquam accusamus sunt magni adipisci, ipsum exercitationem eius culpa suscipit. Dolores provident aut natus iste harum? Quam, inventore?\nLorem ipsum dolor sit amet consectetur adipisicing elit. Similique, nisi labore mollitia quisquam accusamus sunt magni adipisci, ipsum exercitationem eius culpa suscipit. Dolores provident aut natus iste harum? Quam, inventore?',
     myRole: 'Frontend developer',
     technologies: ['React', 'Gatsby', 'Styled-components'],
   },
@@ -48,7 +48,9 @@ const ProjectCards = () => {
               {project.name.toUpperCase()}
             </h3>
             <ProjectProp title="Description">
-              <Paragraph>{project.description}</Paragraph>
+              {project.description.split('\n').map((paragraph, index) => (
+                <Paragraph key="index">{paragraph}</Paragraph>
+              ))}
             </ProjectProp>
             <ProjectProp title="My role">
               <Paragraph>{project.myRole}</Paragraph>
