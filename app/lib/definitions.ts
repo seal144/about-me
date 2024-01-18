@@ -9,6 +9,7 @@ export type Project = {
   id: string;
   name: string;
   description: string;
-  myRole: string;
+  role: string;
   technologies: string[];
+  list_order: number;
 };
