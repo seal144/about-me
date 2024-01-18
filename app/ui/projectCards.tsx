@@ -23,7 +23,7 @@ const ProjectCards = ({ data }: { data: Project[] }) => {
             ))}
           </ProjectProp>
           <ProjectProp title="My role">
-            <Paragraph>{project.myRole}</Paragraph>
+            <Paragraph>{project.role}</Paragraph>
           </ProjectProp>
           <ProjectProp title="Core technologies">
             <div className="flex flex-wrap gap-2">
