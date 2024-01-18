@@ -6,7 +6,7 @@ const mockedData: Project[] = [
     id: '1',
     name: 'E-learning web\xa0app',
     description:
-      'E-learning app for medical students to prepare for university exams. Includes various types of exams and exercises also with study-in-group features via virtual meetings in the app. With an extensive dashboard of statistics about study progress and user account. The app is in a subscription-based model with a couple of different plans.\nDuring my engagement, I was involved in the rebranding and refactoring process of a whole application.',
+      'E-learning app for medical students to prepare for university exams. Includes various types of exams and exercises also with study-in-group features via virtual meetings in the app. With an extensive dashboard of statistics about study progress and user account. The app is in a subscription-based model with a couple of different plans.\nI was involved in the rebranding and refactoring process of a whole application.',
     role: 'Frontend developer',
     technologies: ['React.js', 'Material UI', 'Apollo GraphQL'],
     list_order: 10,
@@ -24,7 +24,7 @@ const mockedData: Project[] = [
     id: '3',
     name: 'Software house website',
     description:
-      'Website (SSG type) for a software house company. The site content was managed daily by various company departments through a CMS (Sanity).\nDuring my engagement, I was involved in developing the website, developing the CMS capabilities, refactoring existing code, performing deploys, and maintaining the project.',
+      'Website (SSG type) for a software house company. The site content was managed daily by various company departments through a CMS (Sanity).\nI was involved in developing the website, developing the CMS capabilities, refactoring existing code, performing deploys, and maintaining the project.',
     role: 'Frontend developer',
     technologies: ['React.js', 'Gatsby', 'Styled-components', 'Sanity', 'Netlify'],
     list_order: 30,
