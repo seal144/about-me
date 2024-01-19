@@ -1,8 +1,14 @@
-## About me
+# About me page
 
-This project is a résumé page on my professional skills. For now, it is in the development phase.
+## Published at
 
-### Used: Next.js, TypeScript, Tailwind.css.
+https://rafal-fak.vercel.app/
+
+## About project
+
+This project is a résumé page on my professional skills and projects. Some content is fetched on the server side from the PostgreSQL database.
+
+### Used: Next.js, TypeScript, Tailwind.css, PostgreSQL.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
