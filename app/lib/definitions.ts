@@ -13,3 +13,8 @@ export type Project = {
   technologies: string[];
   list_order: number;
 };
+
+export enum Routes {
+  Home = '/',
+  Projects = '/projects',
+}
