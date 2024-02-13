@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { randomNumber } from '@/app/utils/math';
+import { randomNumber } from '@/app/lib/utils';
 
 const SkeletonText = ({
   variant = 'p',

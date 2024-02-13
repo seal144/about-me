@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import Section from '@/app/ui/section';
 import { fetchSkills } from '@/app/lib/data';
 import Chip from '@/app/ui/chip';
-import { randomNumber } from '@/app/utils/math';
+import { randomNumber } from '@/app/lib/utils';
 import ErrorBoundary from '@/app/ui/errorBoundary';
 import SkillsErrorFallback from './skillsErrorFallback';
 
