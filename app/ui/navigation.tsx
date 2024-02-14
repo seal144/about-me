@@ -4,7 +4,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import Image from 'next/image';
 
 import Button from './button';
-import { Routes } from '@/app/lib/definitions';
+import { Routes, HomeSections } from '@/app/lib/definitions';
 
 const Navigation = ({ className }: { className?: string }) => {
   const pathName = usePathname();
@@ -28,6 +28,14 @@ const Navigation = ({ className }: { className?: string }) => {
     router.push(route);
   };
 
+  const handleSectionLink = (sectionId: string) => {
+    if (pathName === Routes.Home) {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      router.push(`${Routes.Home}#${sectionId}`);
+    }
+  };
+
   return (
     <section className={`bg-background py-3 border-y sticky top-0 z-[100] ${className}`}>
       <div className="container flex justify-between">
@@ -41,18 +49,39 @@ const Navigation = ({ className }: { className?: string }) => {
             }}
             active={pathName === Routes.Home}
           >
-            HOME
+            Home
           </Button>
-          <Button variant="secondary">About me</Button>
-          <Button variant="secondary">Skills</Button>
-          <Button variant="secondary">Experience</Button>
+          <Button
+            variant="secondary"
+            onClick={() => {
+              handleSectionLink(HomeSections.AboutMeSection);
+            }}
+          >
+            About me
+          </Button>
+          <Button
+            variant="secondary"
+            onClick={() => {
+              handleSectionLink(HomeSections.skillsSection);
+            }}
+          >
+            Skills
+          </Button>
+          <Button
+            variant="secondary"
+            onClick={() => {
+              handleSectionLink(HomeSections.experienceSection);
+            }}
+          >
+            Experience
+          </Button>
           <Button
             onClick={() => {
               handleLink(Routes.Projects);
             }}
             active={pathName === Routes.Projects}
           >
-            PROJECTS
+            Projects
           </Button>
         </div>
       </div>

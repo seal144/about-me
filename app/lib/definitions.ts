@@ -18,3 +18,9 @@ export enum Routes {
   Home = '/',
   Projects = '/projects',
 }
+
+export enum HomeSections {
+  AboutMeSection = 'about-me-section',
+  skillsSection = 'skills-section',
+  experienceSection = 'experience-section',
+}

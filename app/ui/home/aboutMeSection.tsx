@@ -4,6 +4,8 @@ import { sectionMb, sectionPy } from '@/app/ui/section';
 import Header from '@/app/ui/header';
 import ExternalLink from '@/app/ui/externalLink';
 import Paragraph from '@/app/ui/paragraph';
+import DummyForScrollOffset from '@/app/ui/dummyForScroll';
+import { HomeSections } from '@/app/lib/definitions';
 
 // NOTE: the padding classes are related to containerPadding in tailwind.config.ts, if the containerPadding changes, you need to also manually change the below values to align with the app container. I tried to use the template string (``) and calculate the padding values to change automatically when containerPadding changes, but it is not always working.
 const containerPadding = 'px-0 sm:px-[1rem]';
@@ -75,6 +77,7 @@ const AboutMeSection = () => {
 
   return (
     <section className={clsx(sectionMb)}>
+      <DummyForScrollOffset id={HomeSections.AboutMeSection} />
       <div className={clsx('container flex flex-col-reverse md:flex-row', containerPadding)}>
         <div
           className={clsx(
