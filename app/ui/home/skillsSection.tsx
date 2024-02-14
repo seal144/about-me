@@ -5,6 +5,7 @@ import Chip from '@/app/ui/chip';
 import { randomNumber } from '@/app/lib/utils';
 import ErrorBoundary from '@/app/ui/errorBoundary';
 import SkillsErrorFallback from './skillsErrorFallback';
+import { HomeSections } from '@/app/lib/definitions';
 
 const Skills = async () => {
   const data = await fetchSkills();
@@ -39,7 +40,7 @@ const SkillsSkeleton = () => {
 
 const SkillsSection = () => {
   return (
-    <Section title="Skills" backgroundPrimary>
+    <Section title="Skills" backgroundPrimary id={HomeSections.skillsSection}>
       <div className="flex gap-2 flex-wrap justify-center sm:gap-4">
         <ErrorBoundary fallback={<SkillsErrorFallback />}>
           <Suspense fallback={<SkillsSkeleton />}>
