@@ -9,12 +9,13 @@ import HamburgerButton from './hamburgerButton';
 import { Routes, HomeSections } from '@/app/lib/definitions';
 import { getElementTopPosition } from '@/app/lib/utils';
 import useClickOutside from '@/app/lib/useClickOutside';
+import { useHamburgerMenuStore } from '@/app/lib/store';
 
 const Navigation = () => {
   const pathName = usePathname();
   const router = useRouter();
   const [activeSection, setActiveSection] = useState<HomeSections | null>(null);
-  const [isMenuExpanded, setIsMenuExpanded] = useState<Boolean>(false);
+  const { isExtended, toggleIsExtended, hideMenu } = useHamburgerMenuStore();
   const navigationRef = useRef<HTMLElement | null>(null);
 
   const isHome = useMemo(() => {
@@ -25,7 +26,9 @@ const Navigation = () => {
   }, [pathName]);
 
   useClickOutside(navigationRef, () => {
-    setIsMenuExpanded(false);
+    if (isExtended) {
+      hideMenu();
+    }
   });
 
   useEffect(() => {
@@ -63,6 +66,9 @@ const Navigation = () => {
   }, [isHome]);
 
   const handleLogoClick = () => {
+    if (isExtended) {
+      hideMenu();
+    }
     if (isHome) {
       window.scrollTo({
         top: 0,
@@ -78,6 +84,11 @@ const Navigation = () => {
       return;
     }
     router.push(route);
+    if (route === Routes.Home) {
+      if (isExtended) {
+        hideMenu();
+      }
+    }
   };
 
   const handleSectionLink = (sectionId: string) => {
@@ -93,8 +104,8 @@ const Navigation = () => {
       className={clsx(
         'bg-background py-3 border-y sticky top-0 z-[100] mb-sectionMargin overflow-hidden transition-[height] duration-300',
         {
-          'h-[66px]': !isMenuExpanded,
-          'h-[324px] lg:h-[66px]': isMenuExpanded,
+          'h-[66px]': !isExtended,
+          'h-[324px] lg:h-[66px]': isExtended,
         }
       )}
       ref={navigationRef}
@@ -105,12 +116,7 @@ const Navigation = () => {
         </button>
         <div className="flex flex-col gap-3 lg:flex-row">
           <div className="w-fit lg:hidden mt-1 mb-3 ml-auto">
-            <HamburgerButton
-              isOpen={isMenuExpanded}
-              toggleIsOpen={() => {
-                setIsMenuExpanded((prevState) => !prevState);
-              }}
-            />
+            <HamburgerButton isOpen={isExtended} toggleIsOpen={toggleIsExtended} />
           </div>
           <Button
             onClick={() => {
