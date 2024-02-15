@@ -1,17 +1,60 @@
 'use client';
-
+import { useEffect, useMemo, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import Image from 'next/image';
 
 import Button from './button';
 import { Routes, HomeSections } from '@/app/lib/definitions';
+import { getElementTopPosition } from '@/app/lib/utils';
 
 const Navigation = ({ className }: { className?: string }) => {
   const pathName = usePathname();
   const router = useRouter();
+  const [activeSection, setActiveSection] = useState<HomeSections | null>(null);
+
+  const isHome = useMemo(() => {
+    return pathName === Routes.Home;
+  }, [pathName]);
+  const isProjects = useMemo(() => {
+    return pathName === Routes.Projects;
+  }, [pathName]);
+
+  useEffect(() => {
+    if (isHome) {
+      const handleActiveSection = () => {
+        const AboutMeSectionPosition = getElementTopPosition(HomeSections.AboutMeSection);
+        const SkillsSectionPosition = getElementTopPosition(HomeSections.SkillsSection);
+        const ExperienceSectionPosition = getElementTopPosition(HomeSections.ExperienceSection);
+
+        if (
+          AboutMeSectionPosition !== undefined &&
+          SkillsSectionPosition !== undefined &&
+          ExperienceSectionPosition !== undefined
+        ) {
+          if (AboutMeSectionPosition <= 1 && SkillsSectionPosition > 1 && ExperienceSectionPosition > 1) {
+            setActiveSection(HomeSections.AboutMeSection);
+          } else if (SkillsSectionPosition <= 1 && ExperienceSectionPosition > 1) {
+            setActiveSection(HomeSections.SkillsSection);
+          } else if (ExperienceSectionPosition <= 1) {
+            setActiveSection(HomeSections.ExperienceSection);
+          } else {
+            setActiveSection(null);
+          }
+        }
+      };
+
+      handleActiveSection();
+
+      window.addEventListener('scroll', handleActiveSection);
+
+      return () => {
+        window.removeEventListener('scroll', handleActiveSection);
+      };
+    }
+  }, [isHome]);
 
   const handleLogoClick = () => {
-    if (pathName === Routes.Home) {
+    if (isHome) {
       window.scrollTo({
         top: 0,
         behavior: 'smooth',
@@ -29,7 +72,7 @@ const Navigation = ({ className }: { className?: string }) => {
   };
 
   const handleSectionLink = (sectionId: string) => {
-    if (pathName === Routes.Home) {
+    if (isHome) {
       document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
     } else {
       router.push(`${Routes.Home}#${sectionId}`);
@@ -47,7 +90,7 @@ const Navigation = ({ className }: { className?: string }) => {
             onClick={() => {
               handleLink(Routes.Home);
             }}
-            active={pathName === Routes.Home}
+            active={isHome}
           >
             Home
           </Button>
@@ -56,22 +99,25 @@ const Navigation = ({ className }: { className?: string }) => {
             onClick={() => {
               handleSectionLink(HomeSections.AboutMeSection);
             }}
+            active={activeSection === HomeSections.AboutMeSection}
           >
             About me
           </Button>
           <Button
             variant="secondary"
             onClick={() => {
-              handleSectionLink(HomeSections.skillsSection);
+              handleSectionLink(HomeSections.SkillsSection);
             }}
+            active={activeSection === HomeSections.SkillsSection}
           >
             Skills
           </Button>
           <Button
             variant="secondary"
             onClick={() => {
-              handleSectionLink(HomeSections.experienceSection);
+              handleSectionLink(HomeSections.ExperienceSection);
             }}
+            active={activeSection === HomeSections.ExperienceSection}
           >
             Experience
           </Button>
@@ -79,7 +125,7 @@ const Navigation = ({ className }: { className?: string }) => {
             onClick={() => {
               handleLink(Routes.Projects);
             }}
-            active={pathName === Routes.Projects}
+            active={isProjects}
           >
             Projects
           </Button>

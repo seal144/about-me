@@ -21,6 +21,6 @@ export enum Routes {
 
 export enum HomeSections {
   AboutMeSection = 'about-me-section',
-  skillsSection = 'skills-section',
-  experienceSection = 'experience-section',
+  SkillsSection = 'skills-section',
+  ExperienceSection = 'experience-section',
 }
