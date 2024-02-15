@@ -46,7 +46,7 @@ const config: Config = {
         sm: '2px',
       },
       spacing: {
-        section: '40px',
+        sectionMargin: '40px',
       },
     },
   },

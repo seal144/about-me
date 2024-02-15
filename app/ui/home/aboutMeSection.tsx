@@ -77,7 +77,7 @@ const AboutMeSection = () => {
 
   return (
     <section className={clsx(sectionMb)}>
-      <DummyForScrollOffset id={HomeSections.AboutMeSection} />
+      <DummyForScrollOffset id={HomeSections.AboutMeSection} offset="sm" />
       <div className={clsx('container flex flex-col-reverse md:flex-row', containerPadding)}>
         <div
           className={clsx(

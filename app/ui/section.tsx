@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import Header from './header';
 import DummyForScrollOffset from './dummyForScroll';
 
-export const sectionMb = 'mb-section';
+export const sectionMb = 'mb-sectionMargin';
 export const sectionPy = 'py-8';
 
 const Section = ({

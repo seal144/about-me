@@ -4,9 +4,9 @@ import BackgroundAnimation from '../ui/home/background-animation';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <main className="min-h-screen">
+    <main>
       <BackgroundAnimation />
-      <Navigation className="mb-section" />
+      <Navigation />
       {children}
       <Footer />
     </main>
