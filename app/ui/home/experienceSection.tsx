@@ -16,7 +16,7 @@ const ExperienceSection = () => {
     <Section
       title="Experience"
       subtitle="Some commercial projects I have been involved in:"
-      id={HomeSections.experienceSection}
+      id={HomeSections.ExperienceSection}
     >
       <div className="flex flex-wrap justify-center gap-8 xl:gap-10 2xl:gap-12">
         <ErrorBoundary fallback={<ExperienceErrorFallback />}>

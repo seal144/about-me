@@ -40,7 +40,7 @@ const SkillsSkeleton = () => {
 
 const SkillsSection = () => {
   return (
-    <Section title="Skills" backgroundPrimary id={HomeSections.skillsSection}>
+    <Section title="Skills" backgroundPrimary id={HomeSections.SkillsSection}>
       <div className="flex gap-2 flex-wrap justify-center sm:gap-4">
         <ErrorBoundary fallback={<SkillsErrorFallback />}>
           <Suspense fallback={<SkillsSkeleton />}>
