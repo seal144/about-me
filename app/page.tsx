@@ -11,7 +11,7 @@ export default function Home() {
     <main>
       <BackgroundAnimation />
       <HeroSection />
-      <Navigation className="mb-section" />
+      <Navigation />
       <AboutMeSection />
       <SkillsSection />
       <ExperienceSection />

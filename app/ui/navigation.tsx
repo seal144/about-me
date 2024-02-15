@@ -2,15 +2,18 @@
 import { useEffect, useMemo, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import Image from 'next/image';
+import clsx from 'clsx';
 
 import Button from './button';
+import HamburgerButton from './hamburgerButton';
 import { Routes, HomeSections } from '@/app/lib/definitions';
 import { getElementTopPosition } from '@/app/lib/utils';
 
-const Navigation = ({ className }: { className?: string }) => {
+const Navigation = () => {
   const pathName = usePathname();
   const router = useRouter();
   const [activeSection, setActiveSection] = useState<HomeSections | null>(null);
+  const [isMenuExpanded, setIsMenuExpanded] = useState<Boolean>(false);
 
   const isHome = useMemo(() => {
     return pathName === Routes.Home;
@@ -80,12 +83,28 @@ const Navigation = ({ className }: { className?: string }) => {
   };
 
   return (
-    <section className={`bg-background py-3 border-y sticky top-0 z-[100] ${className}`}>
-      <div className="container flex justify-between">
+    <section
+      className={clsx(
+        'bg-background py-3 border-y sticky top-0 z-[100] mb-sectionMargin overflow-hidden transition-[height] duration-300',
+        {
+          'h-[66px]': !isMenuExpanded,
+          'h-[324px] lg:h-[66px]': isMenuExpanded,
+        }
+      )}
+    >
+      <div className="container flex justify-between items-start ">
         <button onClick={handleLogoClick} className="block">
           <Image src="/logo.png" height={36} width={66} alt="logo" />
         </button>
-        <div className="flex gap-3">
+        <div className="flex flex-col gap-3 lg:flex-row">
+          <div className="w-fit lg:hidden mt-1 mb-3 ml-auto">
+            <HamburgerButton
+              isOpen={isMenuExpanded}
+              toggleIsOpen={() => {
+                setIsMenuExpanded((prevState) => !prevState);
+              }}
+            />
+          </div>
           <Button
             onClick={() => {
               handleLink(Routes.Home);
