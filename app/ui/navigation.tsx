@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import clsx from 'clsx';
@@ -8,12 +8,14 @@ import Button from './button';
 import HamburgerButton from './hamburgerButton';
 import { Routes, HomeSections } from '@/app/lib/definitions';
 import { getElementTopPosition } from '@/app/lib/utils';
+import useClickOutside from '@/app/lib/useClickOutside';
 
 const Navigation = () => {
   const pathName = usePathname();
   const router = useRouter();
   const [activeSection, setActiveSection] = useState<HomeSections | null>(null);
   const [isMenuExpanded, setIsMenuExpanded] = useState<Boolean>(false);
+  const navigationRef = useRef<HTMLElement | null>(null);
 
   const isHome = useMemo(() => {
     return pathName === Routes.Home;
@@ -21,6 +23,10 @@ const Navigation = () => {
   const isProjects = useMemo(() => {
     return pathName === Routes.Projects;
   }, [pathName]);
+
+  useClickOutside(navigationRef, () => {
+    setIsMenuExpanded(false);
+  });
 
   useEffect(() => {
     if (isHome) {
@@ -91,6 +97,7 @@ const Navigation = () => {
           'h-[324px] lg:h-[66px]': isMenuExpanded,
         }
       )}
+      ref={navigationRef}
     >
       <div className="container flex justify-between items-start ">
         <button onClick={handleLogoClick} className="block">
