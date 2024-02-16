@@ -21,7 +21,7 @@ const ProjectProp = ({
   );
 };
 
-const ProjectCard = ({ project }: { project?: Project }) => {
+const ExperienceCard = ({ project }: { project?: Project }) => {
   return (
     <div
       className={clsx('bg-primary p-6 rounded-2xl drop-shadow-l w-[100%] lg:w-[48%]', {
@@ -66,25 +66,25 @@ const ProjectCard = ({ project }: { project?: Project }) => {
   );
 };
 
-export const SkeletonProjectCards = ({ quantity }: { quantity: number }) => {
+export const SkeletonExperienceCards = ({ quantity }: { quantity: number }) => {
   const iterationArray = new Array(quantity).fill('');
   return (
     <>
       {iterationArray.map((item, index) => (
-        <ProjectCard key={index} />
+        <ExperienceCard key={index} />
       ))}
     </>
   );
 };
 
-const ProjectCards = ({ data }: { data: Project[] }) => {
+const ExperienceCards = ({ data }: { data: Project[] }) => {
   return (
     <>
       {data.map((project) => (
-        <ProjectCard key={project.id} project={project} />
+        <ExperienceCard key={project.id} project={project} />
       ))}
     </>
   );
 };
 
-export default ProjectCards;
+export default ExperienceCards;
