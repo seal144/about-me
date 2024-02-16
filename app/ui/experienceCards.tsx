@@ -1,68 +1,46 @@
-import clsx from 'clsx';
+import Card, { CardTitle } from './Card';
 import Chip from './chip';
+import InfoProp from './infoProp';
 import Paragraph from './paragraph';
 import SkeletonText from './skeletonText';
 import { Project } from '@/app/lib/definitions';
 
-const ProjectProp = ({
-  title,
-  children,
-  skeleton = false,
-}: {
-  title?: string;
-  children: React.ReactNode;
-  skeleton?: boolean;
-}) => {
-  return (
-    <div className="mb-3">
-      <h4 className="text-background text-base sm:text-lg mb-1">{!skeleton ? title : <SkeletonText variant="h4" />}</h4>
-      {children}
-    </div>
-  );
-};
-
 const ExperienceCard = ({ project }: { project?: Project }) => {
   return (
-    <div
-      className={clsx('bg-primary p-6 rounded-2xl drop-shadow-l w-[100%] lg:w-[48%]', {
-        'animate-pulse': !project,
-      })}
-    >
-      <h3 className="text-background text-xl text-center mb-2 sm:text-2xl md:mb-4">
-        {project ? project.name.toUpperCase() : <SkeletonText variant="h3" quantity={3} />}
-      </h3>
+    <Card className="lg:w-[48%]">
+      <CardTitle title={project?.name.toUpperCase()} loading={!project} />
       {project ? (
         <>
-          <ProjectProp title="Description">
+          <InfoProp title="Description">
             {project.description.split('\n').map((paragraph, index) => (
               <Paragraph key="index">{paragraph}</Paragraph>
             ))}
-          </ProjectProp>
-          <ProjectProp title="My role">
+          </InfoProp>
+          <InfoProp title="My role">
             <Paragraph>{project.role}</Paragraph>
-          </ProjectProp>
-          <ProjectProp title="Core technologies">
+          </InfoProp>
+          <InfoProp title="Core technologies">
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech, index) => (
                 <Chip key={index} label={tech} onPrimary small />
               ))}
             </div>
-          </ProjectProp>
+          </InfoProp>
         </>
       ) : (
         <>
-          <ProjectProp skeleton>
+          <InfoProp skeleton>
             <SkeletonText variant="p" quantity={70} />
-          </ProjectProp>
-          <ProjectProp skeleton>
+          </InfoProp>
+          <InfoProp skeleton>
             <SkeletonText variant="p" quantity={3} />
-          </ProjectProp>
-          <ProjectProp skeleton>
+          </InfoProp>
+          <InfoProp skeleton>
             <SkeletonText variant="h3" quantity={5} roundFull />
-          </ProjectProp>
+          </InfoProp>
         </>
       )}
-    </div>
+    </Card>
   );
 };
 
