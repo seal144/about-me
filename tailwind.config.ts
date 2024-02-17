@@ -44,6 +44,7 @@ const config: Config = {
       borderWidth: {
         DEFAULT: '3px',
         sm: '2px',
+        lg: '6px',
       },
       spacing: {
         sectionMargin: '40px',

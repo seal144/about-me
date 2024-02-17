@@ -134,7 +134,6 @@ const AboutMeSection = () => {
                   label="LinkedIn(rafal-fak)"
                   href="https://www.linkedin.com/in/rafal-fak/"
                   iconColor="foreground"
-                  underline={false}
                   dropShadow={false}
                   hideArrowUnderLg
                 />
@@ -145,7 +144,6 @@ const AboutMeSection = () => {
                   label="Github(seal144)"
                   href="https://github.com/seal144"
                   iconColor="foreground"
-                  underline={false}
                   dropShadow={false}
                   hideArrowUnderLg
                 />
