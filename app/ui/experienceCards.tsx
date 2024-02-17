@@ -1,4 +1,4 @@
-import Card, { CardTitle } from './Card';
+import Card, { CardTitle } from './card';
 import Chip from './chip';
 import InfoProp from './infoProp';
 import Paragraph from './paragraph';

@@ -20,7 +20,7 @@ const Card = ({
 }) => {
   return (
     <div
-      className={clsx('bg-primary p-6 rounded-2xl drop-shadow-l', className, {
+      className={clsx('bg-primary p-4 rounded-2xl drop-shadow-l sm:p-6 xl:p-8', className, {
         'animate-pulse': loading,
       })}
     >
