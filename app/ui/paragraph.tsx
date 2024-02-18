@@ -11,7 +11,7 @@ const Paragraph = ({
 }) => {
   return (
     <p
-      className={clsx('text-foreground text-left text-sm sm:text-base sm:text-justify', className, {
+      className={clsx('text-foreground text-left text-sm sm:text-base lg:text-justify', className, {
         'mb-2': !smallMargin,
         'mb-1': smallMargin,
       })}
