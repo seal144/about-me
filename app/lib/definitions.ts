@@ -24,3 +24,8 @@ export enum HomeSections {
   SkillsSection = 'skills-section',
   ExperienceSection = 'experience-section',
 }
+
+export interface ImageInterface {
+  src: string;
+  alt: string;
+}
