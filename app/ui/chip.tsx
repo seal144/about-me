@@ -1,4 +1,7 @@
 import { clsx } from 'clsx';
+import Image from 'next/image';
+
+import { ImageInterface } from '../lib/definitions';
 
 const Chip = ({
   label,
@@ -6,16 +9,18 @@ const Chip = ({
   small = false,
   skeleton = false,
   skeletonWidth = 'md',
+  image,
 }: {
   label: string;
   onPrimary?: boolean;
   small?: boolean;
   skeleton?: boolean;
   skeletonWidth?: 'sm' | 'md' | 'lg' | 'xlg';
+  image?: ImageInterface;
 }) => {
   return (
     <div
-      className={clsx(`whitespace-nowrap w-fit text-foreground rounded-full py-1 px-3 drop-shadow-s`, {
+      className={clsx(`whitespace-nowrap w-fit text-foreground rounded-full py-1 px-4 drop-shadow-s`, {
         'bg-primary': !onPrimary,
         'bg-background': onPrimary,
         'text-base sm:text-xl': !small,
@@ -27,7 +32,14 @@ const Chip = ({
         'min-w-[160px]': skeleton && skeletonWidth === 'xlg',
       })}
     >
-      {skeleton ? '' : `*${label}`}
+      {skeleton && ''}
+      {!skeleton && image ? (
+        <span>
+          <Image height={20} width={20} src={image.src} alt={image.alt} className="inline mb-[3px]" /> {label}
+        </span>
+      ) : (
+        `*${label}`
+      )}
     </div>
   );
 };

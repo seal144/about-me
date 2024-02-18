@@ -6,26 +6,41 @@ import Chip from '@/app/ui/chip';
 import InfoProp from '@/app/ui/infoProp';
 import Paragraph from '@/app/ui/paragraph';
 import ExternalLink from '@/app/ui/externalLink';
+import { ImageInterface } from '@/app/lib/definitions';
 
 interface LinkInterface {
   label: string;
   href: string;
 }
 
-interface ImageInterface {
-  src: string;
-  alt: string;
+interface technologyInterface {
+  label: string;
+  image?: ImageInterface;
 }
 
-const projects = [
+interface ProjectsInterface {
+  title: string;
+  image?: ImageInterface;
+  description?: string[];
+  keyFeatures?: string[];
+  links?: LinkInterface[];
+  technologies?: technologyInterface[];
+}
+
+const projectsData: ProjectsInterface[] = [
   {
     title: 'Communicator - web app',
     image: { src: '/communicator.png', alt: 'communicator screen' },
     description: [
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem nisi, placeat sunt perferendis quae adipisci impedit, totam velit illo, rem deleniti natus omnis ex deserunt quam accusamus nam similique?',
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem nisi, placeat sunt perferendis quae adipisci impedit, totam velit illo, rem deleniti natus omnis ex deserunt quam accusamus nam similique?',
+      'A fully functional application for group chatting. To use it, create a user account or use a guest account, then create or join a group (room) and share a name and password (if applicable) with others.',
+      'The application leverages Firebase for authentication and database management, ensuring a secure and reliable user experience.',
     ],
-    keyFeatures: ['Lorem ipsum dolor', 'Lorem dolor sit amet', 'Lorem ipsum dolor sit amet', 'Lorem ipsum sit amet'],
+    keyFeatures: [
+      'Flexible authentication options including email + password, Google, and anonymous sign-up.',
+      'Customizable app settings enabling users to change the color theme, display name, or delete their account.',
+      'Creating and joining rooms for collaboration with other users.',
+      'Intuitive room interface with integrated chat functionality for real-time communication among room members.',
+    ],
     links: [
       {
         label: 'Publication',
@@ -36,33 +51,57 @@ const projects = [
         href: 'https://github.com/seal144/chooser/',
       },
     ],
-    technologies: ['Vue', 'Pinia', 'Vuetify', 'Firebase', 'Vite'],
-  },
-  {
-    title: 'Rectangle World - experimental evolution simulator',
-    image: { src: '/rectangle-world.png', alt: 'rectangle world screen' },
-    description: [
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem nisi, placeat sunt perferendis quae adipisci impedit, totam velit illo, rem deleniti natus omnis ex deserunt quam accusamus nam similique?',
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem nisi, placeat sunt perferendis quae adipisci impedit, totam velit illo, rem deleniti natus omnis ex deserunt quam accusamus nam similique?',
-    ],
-    links: [
+    technologies: [
       {
-        label: 'Publication',
-        href: 'https://seal144.github.io/rec_w/',
+        label: 'Vue',
+        image: {
+          src: '/logo/vue.png',
+          alt: 'vue logo',
+        },
       },
       {
-        label: 'GitHub repository',
-        href: 'https://github.com/seal144/rec_w/',
+        label: 'TypeScript',
+        image: {
+          src: '/logo/typescript.png',
+          alt: 'typescript logo',
+        },
+      },
+      {
+        label: 'Pinia',
+        image: {
+          src: '/logo/pinia.png',
+          alt: 'pinia logo',
+        },
+      },
+      {
+        label: 'Vuetify',
+        image: {
+          src: '/logo/vuetify.png',
+          alt: 'vuetify logo',
+        },
+      },
+      {
+        label: 'Firebase',
+        image: {
+          src: '/logo/firebase.png',
+          alt: 'firebase logo',
+        },
+      },
+      {
+        label: 'Vite',
+        image: {
+          src: '/logo/vite.png',
+          alt: 'vite logo',
+        },
       },
     ],
-    technologies: ['Canvas'],
   },
   {
     title: 'About me - website',
     image: { src: '/about-me.png', alt: 'about me screen' },
     description: [
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem nisi, placeat sunt perferendis quae adipisci impedit, totam velit illo, rem deleniti natus omnis ex deserunt quam accusamus nam similique?',
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem nisi, placeat sunt perferendis quae adipisci impedit, totam velit illo, rem deleniti natus omnis ex deserunt quam accusamus nam similique?',
+      'The Project is the website you are currently on :).  It is a résumé page on my professional skills, commercial projects that I was working on, and also my private projects that I am working on after hours.',
+      'Built with Next.js version 14, the website employs server-side rendering for optimal performance. Some of the page data is fetched from the PostgreSQL database on the server, with integrated handling loading state and possible errors.',
     ],
     links: [
       {
@@ -74,25 +113,78 @@ const projects = [
         href: 'https://github.com/seal144/about-me/',
       },
     ],
-    technologies: ['React', 'Next', 'Tailwind', 'PostgreSQL'],
+    technologies: [
+      {
+        label: 'React',
+        image: {
+          src: '/logo/react.png',
+          alt: 'react logo',
+        },
+      },
+      {
+        label: 'Next',
+        image: {
+          src: '/logo/next.png',
+          alt: 'next logo',
+        },
+      },
+      {
+        label: 'TypeScript',
+        image: {
+          src: '/logo/typescript.png',
+          alt: 'typescript logo',
+        },
+      },
+      {
+        label: 'Tailwind',
+        image: {
+          src: '/logo/tailwind.png',
+          alt: 'tailwind logo',
+        },
+      },
+      {
+        label: 'PostgreSQL',
+        image: {
+          src: '/logo/postgresql.png',
+          alt: 'postgresql logo',
+        },
+      },
+    ],
+  },
+  {
+    title: 'Rectangle World - experimental evolution simulator',
+    image: { src: '/rectangle-world.png', alt: 'rectangle world screen' },
+    description: [
+      'The project, called The Rectangle World, is a simple evolution simulator. In this world live two kinds of creatures: plants and bugs. Plants serve as the sole source of food for the bugs. The Bugs are the subject of evolution, they have two purposes: eat when hungry, and mate when full. Bugs have four features (inherited from their parents): speed, size, senses, and aggression (the features determine the appearance of a bug). To reproduce, bugs have to find another critter, who also wants to mate and who represents the same species. Offspring inherit features after their parents with some inaccuracy, allowing for evolutionary change. With passing generations in this small world, new species arise.',
+      'Feel free to experiment with the simulator by customizing parameters such as environmental factors and initial genes of the bugs in the settings.',
+      'The project is built using: JS (vanilla with object-oriented programming), HTML, CSS, and Canvas.',
+    ],
+    links: [
+      {
+        label: 'Publication',
+        href: 'https://seal144.github.io/rec_w/',
+      },
+      {
+        label: 'GitHub repository',
+        href: 'https://github.com/seal144/rec_w/',
+      },
+    ],
+    technologies: [
+      {
+        label: 'JavaScript',
+        image: {
+          src: '/logo/js.png',
+          alt: 'js logo',
+        },
+      },
+      { label: 'Canvas' },
+    ],
   },
 ];
 
-const ProjectCard = ({
-  title,
-  image,
-  description,
-  keyFeatures,
-  links,
-  technologies,
-}: {
-  title: string;
-  image?: ImageInterface;
-  description?: string[];
-  keyFeatures?: string[];
-  links?: LinkInterface[];
-  technologies?: string[];
-}) => {
+const ProjectCard = ({ project }: { project: ProjectsInterface }) => {
+  const { title, image, description, keyFeatures, links, technologies } = project;
+
   return (
     <Card>
       <CardTitle title={title} />
@@ -117,11 +209,9 @@ const ProjectCard = ({
             </InfoProp>
           )}
           {keyFeatures && (
-            <InfoProp title="key features">
+            <InfoProp title="Key features">
               {keyFeatures.map((feature, index) => (
-                <Paragraph smallMargin key={index}>
-                  {feature}
-                </Paragraph>
+                <Paragraph key={index}>{feature}</Paragraph>
               ))}
             </InfoProp>
           )}
@@ -141,7 +231,7 @@ const ProjectCard = ({
             <InfoProp title="Core technologies">
               <div className="flex flex-wrap gap-2">
                 {technologies.map((tech, index) => (
-                  <Chip key={index} label={tech} onPrimary />
+                  <Chip key={index} label={tech.label} image={tech.image} onPrimary />
                 ))}
               </div>
             </InfoProp>
@@ -155,18 +245,10 @@ const ProjectCard = ({
 export default function Projects() {
   return (
     <>
-      <Section title="Projects" subtitle="non">
+      <Section title="Projects" subtitle="Some of my private projects, that I am working on after hours">
         <div className="w-full flex flex-col gap-10">
-          {projects.map((project) => (
-            <ProjectCard
-              key={project.title}
-              title={project.title}
-              image={project.image}
-              description={project.description}
-              keyFeatures={project.keyFeatures}
-              links={project.links}
-              technologies={project.technologies}
-            />
+          {projectsData.map((project) => (
+            <ProjectCard key={project.title} project={project} />
           ))}
         </div>
       </Section>
