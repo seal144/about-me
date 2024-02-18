@@ -35,7 +35,21 @@ const Chip = ({
       {skeleton && ''}
       {!skeleton && image ? (
         <span>
-          <Image height={20} width={20} src={image.src} alt={image.alt} className="inline mb-[3px]" /> {label}
+          <Image
+            height={20}
+            width={20}
+            src={image.src}
+            alt={image.alt}
+            className="hidden translate-y-[-2px] sm:inline"
+          />
+          <Image
+            height={18}
+            width={18}
+            src={image.src}
+            alt={image.alt}
+            className="inline translate-y-[-2px] sm:hidden"
+          />{' '}
+          {label}
         </span>
       ) : (
         `*${label}`
