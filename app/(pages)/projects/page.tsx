@@ -250,6 +250,12 @@ export default function Projects() {
           {projectsData.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}
+          <Card>
+            <p className="text-foreground text-base text-center sm:text-lg">
+              That&apos;s not all. If you are interested in my other projects, check&nbsp;my&nbsp;
+              <ExternalLink label="Github" href="https://github.com/seal144" iconColor="foreground" />
+            </p>
+          </Card>
         </div>
       </Section>
     </>
