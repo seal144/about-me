@@ -11,29 +11,19 @@ const Chip = ({
   skeletonWidth = 'md',
   image,
 }: {
-  label: string;
+  label?: string;
   onPrimary?: boolean;
   small?: boolean;
   skeleton?: boolean;
   skeletonWidth?: 'sm' | 'md' | 'lg' | 'xlg';
   image?: ImageInterface;
 }) => {
-  return (
-    <div
-      className={clsx(`whitespace-nowrap w-fit text-foreground rounded-full py-1 px-4 drop-shadow-s`, {
-        'bg-primary': !onPrimary,
-        'bg-background': onPrimary,
-        'text-base sm:text-xl': !small,
-        'text-sm sm:text-base': small,
-        'animate-pulse min-h-[36px]': skeleton,
-        'min-w-[80px]': skeleton && skeletonWidth === 'sm',
-        'min-w-[100px]': skeleton && skeletonWidth === 'md',
-        'min-w-[130px]': skeleton && skeletonWidth === 'lg',
-        'min-w-[160px]': skeleton && skeletonWidth === 'xlg',
-      })}
-    >
-      {skeleton && ''}
-      {!skeleton && image ? (
+  const setContent = () => {
+    if (skeleton) {
+      return '';
+    }
+    if (image) {
+      return (
         <span>
           <Image
             height={20}
@@ -51,9 +41,30 @@ const Chip = ({
           />{' '}
           {label}
         </span>
-      ) : (
-        `*${label}`
-      )}
+      );
+    }
+    if (label) {
+      return `*${label}`;
+    }
+  };
+
+  const content = setContent();
+
+  return (
+    <div
+      className={clsx(`whitespace-nowrap w-fit text-foreground rounded-full py-1 px-4 drop-shadow-s`, {
+        'bg-primary': !onPrimary,
+        'bg-background': onPrimary,
+        'text-base sm:text-xl': !small,
+        'text-sm sm:text-base': small,
+        'animate-pulse min-h-[36px]': skeleton,
+        'min-w-[80px]': skeleton && skeletonWidth === 'sm',
+        'min-w-[100px]': skeleton && skeletonWidth === 'md',
+        'min-w-[130px]': skeleton && skeletonWidth === 'lg',
+        'min-w-[160px]': skeleton && skeletonWidth === 'xlg',
+      })}
+    >
+      {content}
     </div>
   );
 };

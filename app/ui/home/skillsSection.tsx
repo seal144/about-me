@@ -32,7 +32,7 @@ const SkillsSkeleton = () => {
   return (
     <>
       {new Array(25).fill('x').map((_, index) => (
-        <Chip key={index} label="skeleton" onPrimary skeleton skeletonWidth={setSkeletonWidth()} />
+        <Chip key={index} onPrimary skeleton skeletonWidth={setSkeletonWidth()} />
       ))}
     </>
   );

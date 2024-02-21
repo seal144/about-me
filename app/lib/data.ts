@@ -1,4 +1,6 @@
 import { sql } from '@vercel/postgres';
+// import { unstable_noStore as noStore } from 'next/cache';
+
 import type { Skill, Project } from './definitions';
 
 const replaceDefects = (text: string) => {
@@ -6,6 +8,8 @@ const replaceDefects = (text: string) => {
 };
 
 export const fetchSkills = async () => {
+  // noStore();
+
   try {
     const data = await sql<Skill>`SELECT * FROM aboutme_skills`;
 
@@ -17,6 +21,8 @@ export const fetchSkills = async () => {
 };
 
 export const fetchProjects = async () => {
+  // noStore();
+
   try {
     const data = await sql<Project>`SELECT * FROM aboutme_projects`;
 
