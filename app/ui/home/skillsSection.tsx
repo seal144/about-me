@@ -31,7 +31,7 @@ const SkillsSkeleton = () => {
 
   return (
     <>
-      {new Array(25).fill('x').map((_, index) => (
+      {new Array(37).fill('x').map((_, index) => (
         <Chip key={index} onPrimary skeleton skeletonWidth={setSkeletonWidth()} />
       ))}
     </>
