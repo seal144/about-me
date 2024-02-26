@@ -1,3 +1,4 @@
+'use client';
 import ExperienceCards from '@/app/ui/experienceCards';
 import { Project } from '@/app/lib/definitions';
 
@@ -31,10 +32,10 @@ const mockedData: Project[] = [
   },
 ];
 
-// This component is used as a fallback for ErrorBoundry. It is showing mocked data that normally are fetched from DB, it could be also an Error message, but I rather show some mocked data instead of an error. Maybe you want to ask: "But why do you have to fetch this data in the first place?" and my answer would be: "Good question you are right I don't have to do so, but it is my first project in Next.js and I want to practice features that Next has to offer"
+// The error is showing mocked data that normally are fetched from DB, it could be also an Error message, but I rather show some mocked data instead of an error. Maybe you want to ask: "But why do you have to fetch this data in the first place?" and my answer would be: "Good question you are right I don't have to do so, but it is my first project in Next.js and I want to practice features that Next has to offer"
 
-const ExperienceErrorFallback = () => {
+const ExperienceError = () => {
   return <ExperienceCards data={mockedData} />;
 };
 
-export default ExperienceErrorFallback;
+export default ExperienceError;
