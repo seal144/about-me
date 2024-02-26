@@ -9,6 +9,7 @@ const replaceDefects = (text: string) => {
 
 export const fetchSkills = async () => {
   noStore();
+  // await new Promise((resolve) => setTimeout(resolve, 3000));
 
   try {
     const data = await sql<Skill>`SELECT * FROM aboutme_skills`;
