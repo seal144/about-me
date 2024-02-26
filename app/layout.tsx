@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { robotoMono } from '@/app/ui/fonts';
 import Footer from '@/app/ui/footer';
-import BackgroundAnimation from '@/app/ui/home/background-animation';
+import BackgroundAnimation from '@/app/ui/background-animation';
 import '@/app/globals.css';
 
 export const metadata: Metadata = {
