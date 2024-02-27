@@ -1,4 +1,4 @@
-import style from './background-animation.module.css';
+import style from './backgroundAnimation.module.css';
 
 export default function BackgroundAnimation() {
   return <div className={`${style.animation}`}></div>;
