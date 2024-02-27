@@ -1,4 +1,4 @@
-import HeroSection from '@/app/ui/home/hero-section';
+import HeroSection from '@/app/ui/home/heroSection';
 import Navigation from '@/app/ui/navigation';
 import AboutMeSection from '@/app/ui/home/aboutMeSection';
 
