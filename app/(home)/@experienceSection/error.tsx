@@ -1,6 +1,8 @@
 'use client';
 import ExperienceCards from '@/app/ui/experienceCards';
 import { Project } from '@/app/lib/definitions';
+import Section from '@/app/ui/section';
+import { HomeSections } from '@/app/lib/definitions';
 
 const mockedData: Project[] = [
   {
@@ -35,7 +37,18 @@ const mockedData: Project[] = [
 // The error is showing mocked data that normally are fetched from DB, it could be also an Error message, but I rather show some mocked data instead of an error. Maybe you want to ask: "But why do you have to fetch this data in the first place?" and my answer would be: "Good question you are right I don't have to do so, but it is my first project in Next.js and I want to practice features that Next has to offer"
 
 const ExperienceError = () => {
-  return <ExperienceCards data={mockedData} />;
+  // the section and div are duplicated in page.tsx. These wrappers should be moved to layout.tsx (like in @skillsSection), but for some reason the layout file is omitted on deployment (it is absent on production)
+  return (
+    <Section
+      title="Experience"
+      subtitle="Some of the commercial projects, that I have been working on:"
+      id={HomeSections.ExperienceSection}
+    >
+      <div className="flex flex-wrap justify-center gap-8 xl:gap-10 2xl:gap-12">
+        <ExperienceCards data={mockedData} />
+      </div>
+    </Section>
+  );
 };
 
 export default ExperienceError;
