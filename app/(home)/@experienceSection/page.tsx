@@ -12,17 +12,9 @@ const FetchedExperienceCards = async () => {
 
 const ExperienceSection = () => {
   return (
-    <Section
-      title="Experience"
-      subtitle="Some of the commercial projects, that I have been working on:"
-      id={HomeSections.ExperienceSection}
-    >
-      <div className="flex flex-wrap justify-center gap-8 xl:gap-10 2xl:gap-12">
-        <Suspense fallback={<SkeletonExperienceCards quantity={3} />}>
-          <FetchedExperienceCards />
-        </Suspense>
-      </div>
-    </Section>
+    <Suspense fallback={<SkeletonExperienceCards quantity={3} />}>
+      <FetchedExperienceCards />
+    </Suspense>
   );
 };
 
