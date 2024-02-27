@@ -4,8 +4,8 @@
 
 .arrow span {
   display: block;
-  width: 1.5vw;
-  height: 1.5vw;
+  width: 1.5rem;
+  height: 1.5rem;
   border-bottom: 5px solid rgb(var(--color-secondary));
   border-right: 5px solid rgb(var(--color-secondary));
   transform: rotate(45deg);
