@@ -1,7 +1,8 @@
 import { clsx } from 'clsx';
 import Image from 'next/image';
 
-import { ImageInterface } from '../lib/definitions';
+import { ImageInterface } from '@/app/lib/definitions';
+import { randomNumber } from '@/app/lib/utils';
 
 const Chip = ({
   label,
@@ -66,6 +67,32 @@ const Chip = ({
     >
       {content}
     </div>
+  );
+};
+
+export const ChipsSkeletonGroup = ({ quantity }: { quantity: number }) => {
+  const setSkeletonWidth = () => {
+    const randomVariant = randomNumber(5);
+    switch (randomVariant) {
+      case 0:
+        return 'sm';
+      case 1:
+        return 'md';
+      case 2:
+        return 'lg';
+      case 3:
+        return 'xlg';
+      default:
+        return 'md';
+    }
+  };
+
+  return (
+    <>
+      {new Array(quantity).fill('x').map((_, index) => (
+        <Chip key={index} onPrimary skeleton skeletonWidth={setSkeletonWidth()} />
+      ))}
+    </>
   );
 };
 
