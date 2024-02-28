@@ -1,5 +1,5 @@
 import Card, { CardTitle } from './card';
-import Chip from './chip';
+import Chip, { ChipsSkeletonGroup } from './chip';
 import InfoProp from './infoProp';
 import Paragraph from './paragraph';
 import SkeletonText from './skeletonText';
@@ -36,7 +36,9 @@ const ExperienceCard = ({ project }: { project?: Project }) => {
             <SkeletonText variant="p" quantity={3} />
           </InfoProp>
           <InfoProp skeleton>
-            <SkeletonText variant="h3" quantity={5} roundFull />
+            <div className="flex flex-wrap gap-2">
+              <ChipsSkeletonGroup quantity={5} />
+            </div>
           </InfoProp>
         </>
       )}
