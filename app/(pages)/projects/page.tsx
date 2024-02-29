@@ -173,8 +173,8 @@ const projectsData: ProjectsInterface[] = [
       {
         label: 'JavaScript',
         image: {
-          src: '/logo/js.png',
-          alt: 'js logo',
+          src: '/logo/javascript.png',
+          alt: 'javascript logo',
         },
       },
       { label: 'Canvas' },

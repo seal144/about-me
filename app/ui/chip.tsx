@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import { ImageInterface } from '@/app/lib/definitions';
 import { randomNumber } from '@/app/lib/utils';
+import autoAssignLogoImage from '@/app/lib/autoAssignLogoImage';
 
 const Chip = ({
   label,
@@ -11,6 +12,7 @@ const Chip = ({
   skeleton = false,
   skeletonWidth = 'md',
   image,
+  autoAssignImage = false,
 }: {
   label?: string;
   onPrimary?: boolean;
@@ -18,7 +20,11 @@ const Chip = ({
   skeleton?: boolean;
   skeletonWidth?: 'sm' | 'md' | 'lg' | 'xlg';
   image?: ImageInterface;
+  autoAssignImage?: boolean;
 }) => {
+  if (autoAssignImage && label) {
+    image = autoAssignLogoImage(label);
+  }
   const setContent = () => {
     if (skeleton) {
       return '';

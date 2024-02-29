@@ -11,7 +11,7 @@ const mockedData: Project[] = [
     description:
       'E-learning app for medical students to prepare for university exams. Includes various types of exams and exercises also with study-in-group features via virtual meetings in the app. With an extensive dashboard of statistics about study progress and user account. The app is in a subscription-based model with a couple of different plans.\nI was involved in the rebranding and refactoring process of a whole application.',
     role: 'Frontend developer',
-    technologies: ['React.js', 'Material UI', 'Apollo GraphQL'],
+    technologies: ['React.js', 'TypeScript', 'Material UI', 'Apollo GraphQL'],
     list_order: 10,
   },
   {
@@ -20,7 +20,7 @@ const mockedData: Project[] = [
     description:
       'Web applications related to blockchain technology for data management using blockchain. With a sub-app for user engagement via various types of challenges that encourage users to use the app and promote it outside. The sub-app is integrated with the metamask wallet because for fulfilling the challenges user is rewarded with tokens working on the Ethereum blockchain deposited on his metamask wallet.  Sub-app includes a scoreboard of users based on gained tokens. The goal of the sub-app is to build a community of app users and promotion of the app itself.\nI was involved as a front-end developer dedicated to building the sub-app from scratch.',
     role: 'Frontend developer',
-    technologies: ['React.js', 'Material UI', 'Wagmi'],
+    technologies: ['React.js', 'TypeScript', 'React Query', 'Material UI', 'Wagmi'],
     list_order: 20,
   },
   {
@@ -29,7 +29,7 @@ const mockedData: Project[] = [
     description:
       'Website (SSG type) for a software house company. The site content was managed daily by various company departments through a CMS (Sanity).\nI was involved in developing the website, developing the CMS capabilities, refactoring existing code, performing deploys, and maintaining the project.',
     role: 'Frontend developer',
-    technologies: ['React.js', 'Gatsby', 'Styled-components', 'Sanity', 'Netlify'],
+    technologies: ['React.js', 'Gatsby', 'JavaScript', 'Styled-components', 'Sanity', 'Netlify'],
     list_order: 30,
   },
 ];
