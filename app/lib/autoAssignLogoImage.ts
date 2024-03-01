@@ -12,6 +12,14 @@ const logosList = [
   'vite',
   'vue',
   'vuetify',
+  'materialui',
+  'apollographql',
+  'reactquery',
+  'wagmi',
+  'gatsby',
+  'styled-components',
+  'sanity',
+  'netlify',
 ];
 
 const autoAssignLogoImage = (label: string): ImageInterface | undefined => {
