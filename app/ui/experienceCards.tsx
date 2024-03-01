@@ -7,7 +7,7 @@ import { Project } from '@/app/lib/definitions';
 
 const ExperienceCard = ({ project }: { project?: Project }) => {
   return (
-    <Card className="lg:w-[48%]">
+    <Card className="xl:w-[48%]">
       <CardTitle title={project?.name.toUpperCase()} loading={!project} />
       {project ? (
         <>
