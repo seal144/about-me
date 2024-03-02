@@ -8,14 +8,14 @@ const ExternalLink = ({
   href,
   iconColor,
   underline = true,
-  hideArrowUnderLg = false,
+  hideArrowOnMd = false,
   dropShadow = true,
 }: {
   label: string;
   href: string;
   iconColor?: Colors;
   underline?: boolean;
-  hideArrowUnderLg?: boolean;
+  hideArrowOnMd?: boolean;
   dropShadow?: boolean;
 }) => {
   return (
@@ -30,8 +30,7 @@ const ExternalLink = ({
       {label}
       <ArrowRightIcon
         className={clsx({
-          hidden: hideArrowUnderLg,
-          'lg:inline': hideArrowUnderLg,
+          'inline md:hidden lg:inline': hideArrowOnMd,
         })}
         fill={iconColor}
       />
