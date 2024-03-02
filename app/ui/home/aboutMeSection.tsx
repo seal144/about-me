@@ -127,15 +127,22 @@ const AboutMeSection = () => {
           </SubSection>
           <SubSection title="Contact / Links" rightCol onPrimary center>
             <ul>
-              <li>*rafalfak8@gmail.com</li>
+              <li>
+                *
+                <ExternalLink
+                  label="rafalfak8@gmail.com"
+                  href="mailto:rafalfak8@gmail.com"
+                  iconColor="foreground"
+                  hideArrowOnMd
+                />
+              </li>
               <li>
                 *
                 <ExternalLink
                   label="LinkedIn(rafal-fak)"
                   href="https://www.linkedin.com/in/rafal-fak/"
                   iconColor="foreground"
-                  dropShadow={false}
-                  hideArrowUnderLg
+                  hideArrowOnMd
                 />
               </li>
               <li>
@@ -144,8 +151,7 @@ const AboutMeSection = () => {
                   label="Github(seal144)"
                   href="https://github.com/seal144"
                   iconColor="foreground"
-                  dropShadow={false}
-                  hideArrowUnderLg
+                  hideArrowOnMd
                 />
               </li>
             </ul>

@@ -6,7 +6,10 @@ const Footer = () => {
       <div className="container text-center lg:text-left">
         <h2 className="text-xl mb-2 drop-shadow-s">Reach me:</h2>
         <div className="text-secondary lg:flex">
-          <p className="drop-shadow-s lg:flex-1">*rafalfak8@gmail.com</p>
+          <div className="lg:flex-1">
+            *
+            <ExternalLink label="rafalfak8@gmail.com" href="mailto:rafalfak8@gmail.com" iconColor="secondary" />
+          </div>
           <div className="lg:flex-1 lg:text-center lg:border-x-sm">
             *
             <ExternalLink
