@@ -29,16 +29,18 @@ interface ProjectsInterface {
 
 const projectsData: ProjectsInterface[] = [
   {
-    title: 'Communicator - web app',
-    image: { src: '/communicator.png', alt: 'communicator screen' },
+    title: 'Choooser - web app',
+    image: { src: '/choooser.png', alt: 'communicator screen' },
     description: [
-      'A fully functional application for group chatting. To use it, create a user account or use a guest account, then create or join a group (room) and share a name and password (if applicable) with others.',
+      'A fully functional application designed to streamline group decision-making processes, CHOOOSER provides a system for selecting the best choice from multiple options in a group setting.',
+      'To use it, create or join a room and share it with others. Besides the decision-making system, rooms also offer a group chatting feature.',
       'The application leverages Firebase for authentication and database management, ensuring a secure and reliable user experience.',
     ],
     keyFeatures: [
-      'Flexible authentication options including email + password, Google, and anonymous sign-up.',
-      'Customizable app settings enabling users to change the color theme, display name, or delete their account.',
+      'Multiple authentication methods: email and password, Google, and anonymous sign-up.',
+      'App settings to change the color theme, display name, or delete an account.',
       'Creating and joining rooms for collaboration with other users.',
+      'A three-phase choosing process: setting options, ranking options, and presenting results.',
       'Intuitive room interface with integrated chat functionality for real-time communication among room members.',
     ],
     links: [
@@ -48,7 +50,7 @@ const projectsData: ProjectsInterface[] = [
       },
       {
         label: 'GitHub repository',
-        href: 'https://github.com/seal144/chooser/',
+        href: 'https://github.com/seal144/choooser/',
       },
     ],
     technologies: [
