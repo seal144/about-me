@@ -20,14 +20,14 @@ const ExternalLink = ({
 }) => {
   return (
     <Link
-      className={clsx({
+      className={clsx('group hover:opacity-80 transition-all', {
         'drop-shadow-s': dropShadow,
         'border-b-sm': underline,
       })}
       href={href}
       target="_blank"
     >
-      {label}
+      <span className="group-hover:pr-2 transition-all">{label}</span>
       <ArrowRightIcon
         className={clsx({
           'inline md:hidden lg:inline': hideArrowOnMd,
