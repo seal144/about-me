@@ -4,6 +4,7 @@ import { Project } from '@/app/lib/definitions';
 import Section from '@/app/ui/section';
 import { HomeSections } from '@/app/lib/definitions';
 
+// TODO - update also with links
 const mockedData: Project[] = [
   {
     id: '1',

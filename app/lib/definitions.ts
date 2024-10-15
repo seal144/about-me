@@ -1,3 +1,9 @@
+interface Link {
+  id: string;
+  label: string;
+  url: string;
+}
+
 export type Skill = {
   id: string;
   name: string;
@@ -11,6 +17,7 @@ export type Project = {
   description: string;
   role: string;
   technologies: string[];
+  links?: Link[];
   list_order: number;
 };
 
