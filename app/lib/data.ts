@@ -25,7 +25,30 @@ export const fetchProjects = async () => {
   noStore();
 
   try {
-    const data = await sql<Project>`SELECT * FROM aboutme_projects`;
+    const data = await sql<Project>`
+    SELECT
+      p.id,
+      p.name,
+      p.description,
+      p.role,
+      p.technologies,
+      p.list_order,
+      ARRAY_AGG(
+        JSONB_BUILD_OBJECT(
+          'id', l.id,
+          'label', l.label,
+          'url', l.url
+        )
+      ) AS links
+    FROM
+      aboutme_projects p
+    LEFT JOIN
+      aboutme_projects_links l
+    ON
+      p.id = l.project_id
+    GROUP BY
+      p.id;
+    `;
 
     const parsedData = data.rows.map((project) => {
       return {
