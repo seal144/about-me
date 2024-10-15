@@ -56,6 +56,7 @@ export const fetchProjects = async () => {
         name: replaceDefects(project.name),
         description: replaceDefects(project.description),
         role: replaceDefects(project.role),
+        links: project.links?.sort((a) => (a.label === 'website' ? -1 : 1)),
       };
     });
 
