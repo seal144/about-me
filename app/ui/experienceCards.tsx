@@ -20,7 +20,7 @@ const ExperienceCard = ({ project }: { project?: Project }) => {
           <InfoProp title="My role">
             <Paragraph>{project.role}</Paragraph>
           </InfoProp>
-          {project.links && (
+          {project.links && project.links[0].id && (
             <InfoProp title="Links">
               {project.links.map((link) => (
                 <div key={link.id}>
