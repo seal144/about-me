@@ -1,15 +1,7 @@
 import clsx from 'clsx';
 import { randomNumber } from '@/app/lib/utils';
 
-const SkeletonText = ({
-  variant = 'p',
-  quantity = 1,
-  roundFull = false,
-}: {
-  variant?: 'p' | 'h3' | 'h4';
-  quantity?: number;
-  roundFull?: boolean;
-}) => {
+const SkeletonText = ({ variant = 'p', quantity = 1 }: { variant?: 'p' | 'h3' | 'h4'; quantity?: number }) => {
   const iterationArray = new Array(quantity).fill(0).map(() => {
     const randomWidthVariant = randomNumber(4);
     switch (randomWidthVariant) {
@@ -30,7 +22,7 @@ const SkeletonText = ({
   const h3Variant = variant === 'h3';
 
   return (
-    <span className="opacity-40">
+    <div className="opacity-40">
       {iterationArray.map((width, index, array) => {
         const lastElement = index === array.length - 1;
         const smWidth = width === 'sm';
@@ -40,9 +32,7 @@ const SkeletonText = ({
         return (
           <div
             key={index}
-            className={clsx('animate-pulse inline-block', {
-              'rounded-lg': !roundFull,
-              'rounded-full': roundFull,
+            className={clsx('animate-pulse inline-block rounded-lg', {
               'w-[22px]': smWidth && pVariant,
               'w-[42px]': mdWidth && pVariant,
               'w-[62px]': lgWidth && pVariant,
@@ -61,7 +51,7 @@ const SkeletonText = ({
           ></div>
         );
       })}
-    </span>
+    </div>
   );
 };
 
