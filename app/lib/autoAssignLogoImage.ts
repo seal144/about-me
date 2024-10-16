@@ -15,7 +15,7 @@ const logosList = [
   'vuetify',
   'materialui',
   'apollographql',
-  'reactquery',
+  'tanstackquery',
   'wagmi',
   'gatsby',
   'styled-components',

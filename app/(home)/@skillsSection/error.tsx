@@ -39,7 +39,7 @@ const mockedData = [
     name: 'GraphQL',
   },
   {
-    name: 'React Query',
+    name: 'TanStack Query',
   },
   {
     name: 'Apollo GraphQL',
