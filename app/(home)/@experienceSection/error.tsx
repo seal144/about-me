@@ -14,6 +14,18 @@ const mockedData: Project[] = [
     role: 'Frontend developer',
     technologies: ['React.js', 'TypeScript', 'Material UI', 'Apollo GraphQL'],
     list_order: 10,
+    links: [
+      {
+        id: '55d69861-54f4-40d6-81d8-2b9fe0ca97d6',
+        url: 'https://quesmed.com/',
+        label: 'website',
+      },
+      {
+        id: 'efaad3b2-624a-4f2f-9862-271709aef6e4',
+        url: 'https://app.quesmed.com/',
+        label: 'app',
+      },
+    ],
   },
   {
     id: '2',
@@ -23,6 +35,18 @@ const mockedData: Project[] = [
     role: 'Frontend developer',
     technologies: ['React.js', 'TypeScript', 'React Query', 'Material UI', 'Wagmi'],
     list_order: 20,
+    links: [
+      {
+        id: '7274c697-7d72-4730-9201-5b7379fd3dea',
+        url: 'https://www.sqd.dev/',
+        label: 'website',
+      },
+      {
+        id: '7bc84015-c044-4013-a1df-4e9a8f386bd8',
+        url: 'https://app.subsquid.io/',
+        label: 'app',
+      },
+    ],
   },
   {
     id: '3',
@@ -32,6 +56,13 @@ const mockedData: Project[] = [
     role: 'Frontend developer',
     technologies: ['React.js', 'Gatsby', 'JavaScript', 'Styled-components', 'Sanity', 'Netlify'],
     list_order: 30,
+    links: [
+      {
+        id: '36b397e3-05c9-41e6-bf6a-fb7ac3eed1e9',
+        url: 'https://10clouds.com/',
+        label: 'website',
+      },
+    ],
   },
 ];
 
