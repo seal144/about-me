@@ -6,6 +6,22 @@ import { HomeSections } from '@/app/lib/definitions';
 
 const mockedData: Project[] = [
   {
+    id: '0',
+    name: 'AI-powered web\xa0app',
+    description:
+      'Web application leveraging AI to empower businesses across various activities. The app serves as a toolbox for creating collaborative projects using AI for a wide range of purposes, such as automating processes, gathering information, performing calculations, obtaining assistance, etc. It is about saturating AI with context and tools by creating various types of assets like agents, notes, API integrations, processes, etc. The app is integrated with multiple large language models (LLMs), enabling users to select the best model for each task.\nI was involved in developing the frontend of the application, making extensive use of AI-powered development tools. Additionally, I participated in tech decision-making during the early stages of the product life cycle.',
+    role: 'Frontend developer',
+    technologies: ['React.js', 'TypeScript', 'Tailwind CSS', 'Radix UI', 'Zustand', 'React Query'],
+    list_order: 5,
+    links: [
+      {
+        id: 'f21e180b-15c3-43b7-bdf6-5c2b14fabb81',
+        url: 'https://aiconsole.ai/',
+        label: 'website',
+      },
+    ],
+  },
+  {
     id: '1',
     name: 'E-learning web\xa0app',
     description:

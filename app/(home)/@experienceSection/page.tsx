@@ -18,7 +18,7 @@ const ExperienceSection = () => {
       id={HomeSections.ExperienceSection}
     >
       <div className="flex flex-wrap justify-center gap-8 xl:gap-10 2xl:gap-12">
-        <Suspense fallback={<SkeletonExperienceCards quantity={3} />}>
+        <Suspense fallback={<SkeletonExperienceCards quantity={4} />}>
           <FetchedExperienceCards />
         </Suspense>
       </div>
