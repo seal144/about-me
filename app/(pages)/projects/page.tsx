@@ -138,9 +138,9 @@ const projectsData: ProjectsInterface[] = [
         },
       },
       {
-        label: 'Tailwind',
+        label: 'Tailwind CSS',
         image: {
-          src: '/logo/tailwind.png',
+          src: '/logo/tailwindcss.png',
           alt: 'tailwind logo',
         },
       },

@@ -6,8 +6,9 @@ const logosList = [
   'next',
   'pinia',
   'postgresql',
+  'radixui',
   'react',
-  'tailwind',
+  'tailwindcss',
   'typescript',
   'vite',
   'vue',
@@ -20,6 +21,7 @@ const logosList = [
   'styled-components',
   'sanity',
   'netlify',
+  'zustand',
 ];
 
 const autoAssignLogoImage = (label: string): ImageInterface | undefined => {
