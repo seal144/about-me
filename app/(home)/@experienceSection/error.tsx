@@ -46,7 +46,7 @@ const mockedData: Project[] = [
     id: '2',
     name: 'blockchain-related web\xa0app',
     description:
-      'Web applications related to blockchain technology for data management using blockchain. With a sub-app for user engagement via various types of challenges that encourage users to use the app and promote it outside. The sub-app is integrated with the metamask wallet because for fulfilling the challenges user is rewarded with tokens working on the Ethereum blockchain deposited on his metamask wallet.  Sub-app includes a scoreboard of users based on gained tokens. The goal of the sub-app is to build a community of app users and promotion of the app itself.\nI was involved as a front-end developer dedicated to building the sub-app from scratch.',
+      'Web applications related to blockchain technology for data management using blockchain. With a sub-app for user engagement via various types of challenges that encourage users to use the app and promote it outside. The sub-app is integrated with the metamask wallet because for fulfilling the challenges user is rewarded with tokens working on the Ethereum blockchain deposited on his metamask wallet. Sub-app includes a scoreboard of users based on gained tokens. The goal of the sub-app is to build a community of app users and promotion of the app itself.\nI was involved as a frontend developer dedicated to building the sub-app from scratch.',
     role: 'Frontend developer',
     technologies: ['React.js', 'TypeScript', 'TanStack Query', 'Material UI', 'Wagmi'],
     list_order: 20,
