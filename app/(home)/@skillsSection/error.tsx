@@ -27,6 +27,9 @@ const mockedData = [
     name: 'Gatsby.js',
   },
   {
+    name: 'Zustand',
+  },
+  {
     name: 'Redux',
   },
   {
@@ -45,13 +48,16 @@ const mockedData = [
     name: 'Apollo GraphQL',
   },
   {
+    name: 'Tailwind CSS',
+  },
+  {
     name: 'Styled-Components',
   },
   {
     name: 'Material UI',
   },
   {
-    name: 'Tailwind CSS',
+    name: 'Radix UI',
   },
   {
     name: 'Vuetify',
